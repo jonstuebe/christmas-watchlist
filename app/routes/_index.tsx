@@ -173,7 +173,7 @@ export default function Index() {
                       alt={movie.title}
                     />
                   ) : null}
-                  <div className="absolute hidden md:flex group hover:bg-black/50 top-0 left-0 z-10 w-full h-full items-center justify-center">
+                  <div className="absolute hidden md:flex group motion-reduce:transition-none motion-reduce:opacity-100 transition-opacity ease-in-out opacity-0 duration-300 hover:opacity-100 hover:bg-black/50 top-0 left-0 z-10 w-full h-full items-center justify-center">
                     <button
                       onClick={toggle.bind(null, movie)}
                       type="button"
