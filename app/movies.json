@@ -238,5 +238,54 @@
     "rating": "PG-13",
     "runtime": 136,
     "stars": 6.9
+  },
+  {
+    "title": "A Christmas Carol",
+    "year": "2009",
+    "rating": "PG",
+    "runtime": 96,
+    "stars": 6.8
+  },
+  {
+    "title": "A Bad Moms Christmas",
+    "year": "2017",
+    "rating": "R",
+    "runtime": 104,
+    "stars": 5.6
+  },
+  {
+    "title": "Noelle",
+    "year": "2019",
+    "rating": "G",
+    "runtime": 100,
+    "stars": 6.3
+  },
+  {
+    "title": "Klaus",
+    "year": "2019",
+    "rating": "PG",
+    "runtime": 96,
+    "stars": 8.2
+  },
+  {
+    "title": "The Man Who Invented Christmas",
+    "year": "2017",
+    "rating": "PG",
+    "runtime": 104,
+    "stars": 7
+  },
+  {
+    "title": "Spirited",
+    "year": "2022",
+    "rating": "PG-13",
+    "runtime": 127,
+    "stars": 6.6
+  },
+  {
+    "title": "The Christmas Chronicles: Part Two",
+    "year": "2020",
+    "rating": "PG",
+    "runtime": 112,
+    "stars": 6.0
   }
 ]

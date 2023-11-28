@@ -169,7 +169,7 @@ export default function Index() {
                       src={movie.poster}
                       loading="lazy"
                       width={240}
-                      className="w-full rounded-lg z-0"
+                      className="w-full h-full object-cover rounded-lg z-0"
                       alt={movie.title}
                     />
                   ) : null}
