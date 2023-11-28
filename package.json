@@ -10,22 +10,35 @@
     "typecheck": "tsc"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.17",
+    "@heroicons/react": "^2.0.18",
     "@remix-run/css-bundle": "^2.0.0",
     "@remix-run/node": "^2.0.0",
     "@remix-run/react": "^2.0.0",
     "@remix-run/serve": "^2.0.0",
+    "@supercharge/promise-pool": "^3.1.0",
     "@vercel/analytics": "^1.0.2",
     "@vercel/remix": "^2.0.0",
+    "fuse.js": "^7.0.0",
     "isbot": "^3.6.8",
+    "lodash-es": "^4.17.21",
+    "movie-art": "^3.0.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "superjson": "^2.2.1",
+    "use-persisted-state": "^0.3.3"
   },
   "devDependencies": {
     "@remix-run/dev": "^2.0.0",
     "@remix-run/eslint-config": "^2.0.0",
+    "@tailwindcss/forms": "^0.5.7",
+    "@types/lodash-es": "^4.17.12",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
+    "@types/use-persisted-state": "^0.3.4",
+    "autoprefixer": "^10.4.16",
     "eslint": "^8.38.0",
+    "tailwindcss": "^3.3.5",
     "typescript": "^5.1.6"
   },
   "engines": {
