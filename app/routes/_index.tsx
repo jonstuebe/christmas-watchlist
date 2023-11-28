@@ -10,6 +10,8 @@ import { RadioGroup } from "@headlessui/react";
 import type { Movie, MovieData } from "../types";
 import { classNames } from "../utils";
 
+export const config = { runtime: "edge" };
+
 export async function loader() {
   // @ts-expect-error
   const movieArt = (await import("movie-art")).default;
@@ -30,9 +32,16 @@ export async function loader() {
       };
     });
 
-  return json({
-    movies: orderBy(results, ["title"]),
-  });
+  return json(
+    {
+      movies: orderBy(results, ["title"]),
+    },
+    {
+      headers: {
+        "Cache-Control": "max-age=2592000, must-revalidate",
+      },
+    }
+  );
 }
 
 type FilterBy = "watched" | "unwatched" | "all";
@@ -150,7 +159,7 @@ export default function Index() {
         </RadioGroup>
       </div>
       <section className="my-8">
-        <ol className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <ol className="grid grid-cols-2 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {movies.map((movie, idx) => (
             <li key={idx} className="col-span-1 flex flex-col">
               <div>
@@ -183,7 +192,7 @@ export default function Index() {
                     </button>
                   </div>
                 </div>
-                <div className="flex flex-row justify-between items-center">
+                <div className="flex flex-col items-start gap-2">
                   <div>
                     <h2 className="text-lg md:text-base font-medium text-gray-900 dark:text-gray-100">
                       {movie.title}{" "}
