@@ -147,7 +147,7 @@ export default function Index() {
                     active ? "ring-2 ring-indigo-600 ring-offset-2" : "",
                     checked
                       ? "bg-indigo-600 text-white hover:bg-indigo-500"
-                      : "ring-1 ring-inset ring-gray-300 bg-white text-gray-900 hover:bg-gray-50",
+                      : "ring-1 ring-inset ring-gray-300 bg-white dark:hover:bg-slate-700 dark:ring-0 dark:ring-gray-700 dark:text-white dark:bg-slate-800 text-gray-900 hover:bg-gray-50",
                     "flex items-center justify-center rounded-md py-3 px-3 text-sm font-semibold uppercase sm:flex-1"
                   )
                 }
