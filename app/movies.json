@@ -231,5 +231,12 @@
     "rating": "PG",
     "runtime": 101,
     "stars": 5.4
+  },
+  {
+    "title": "The Holiday",
+    "year": "2006",
+    "rating": "PG-13",
+    "runtime": 136,
+    "stars": 6.9
   }
 ]
