@@ -1,34 +1,31 @@
 import { CheckCircleIcon } from "@heroicons/react/20/solid";
 import { useLoaderData } from "@remix-run/react";
 import { PromisePool } from "@supercharge/promise-pool";
+import { RadioGroup } from "@headlessui/react";
 import { json } from "@vercel/remix";
 import { orderBy, snakeCase } from "lodash-es";
 import { useCallback, useMemo } from "react";
 import createPersistedState from "use-persisted-state";
 
-import { RadioGroup } from "@headlessui/react";
-import type { Movie, MovieData } from "../types";
 import { classNames } from "../utils";
+import { getMovie } from "../tmdb";
+
+import type { Movie, MovieData } from "../types";
 
 export const config = { runtime: "edge" };
 
 export async function loader() {
-  // @ts-expect-error
-  const movieArt = (await import("movie-art")).default;
   const data: MovieData[] = await import("../movies.json");
 
   const { results } = await PromisePool.for(data)
     .withConcurrency(5)
     .withTaskTimeout(1500)
     .process(async (movie) => {
-      const poster = (await movieArt(movie.title, {
-        year: movie.year,
-        output: "poster",
-      })) as string;
+      const { poster_path } = await getMovie(movie);
 
       return {
         ...movie,
-        poster,
+        poster: `http://image.tmdb.org/t/p/original${poster_path}`,
       };
     });
 
@@ -137,9 +134,9 @@ export default function Index() {
               { label: "Unwatched", value: "unwatched" },
               { label: "Watched", value: "watched" },
               { label: "All", value: "all" },
-            ].map((option) => (
+            ].map((option, idx) => (
               <RadioGroup.Option
-                key={option.label}
+                key={idx}
                 value={option.value}
                 className={({ active, checked }) =>
                   classNames(

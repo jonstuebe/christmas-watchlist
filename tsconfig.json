@@ -1,8 +1,9 @@
 {
   "include": ["remix.env.d.ts", "**/*.ts", "**/*.tsx"],
   "compilerOptions": {
+    "types": ["bun-types"],
     "lib": ["DOM", "DOM.Iterable", "ES2022"],
-    "module": "es2020",
+    "module": "ESNext",
     "isolatedModules": true,
     "esModuleInterop": true,
     "jsx": "react-jsx",
