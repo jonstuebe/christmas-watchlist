@@ -98,6 +98,13 @@ const useMovies = (movies: Movie[], { filterBy }: { filterBy: FilterBy }) => {
     isWatched,
   };
 };
+
+const filterOptions = [
+  { label: "Unwatched", value: "unwatched" },
+  { label: "Watched", value: "watched" },
+  { label: "All", value: "all" },
+];
+
 export default function Index() {
   const data = useLoaderData<typeof loader>();
   const [filterBy, setFilterBy] = useFilterBy();
@@ -128,11 +135,7 @@ export default function Index() {
       <div>
         <RadioGroup value={filterBy} onChange={setFilterBy} className="mt-2">
           <div className="grid grid-cols-3 gap-3 sm:grid-cols-6">
-            {[
-              { label: "Unwatched", value: "unwatched" },
-              { label: "Watched", value: "watched" },
-              { label: "All", value: "all" },
-            ].map((option, idx) => (
+            {filterOptions.map((option, idx) => (
               <RadioGroup.Option
                 key={idx}
                 value={option.value}
