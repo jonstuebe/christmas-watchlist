@@ -12,8 +12,6 @@ import { getMovie } from "../tmdb";
 
 import type { Movie, MovieData } from "../types";
 
-export const config = { runtime: "edge" };
-
 export async function loader() {
   const data: MovieData[] = await import("../movies.json");
 
